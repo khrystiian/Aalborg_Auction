@@ -1,0 +1,78 @@
+﻿@model IEnumerable<AuctionWebApplication.AuctionService.Auction>
+
+@{
+    ViewBag.Title = "Products selling ";
+}
+
+<h2>Products you are selling</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            <p>Status</p>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentHighestBid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentOwnerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @{
+                string timeLeft;
+                if (item.Active)
+                {
+                    var left = (item.EndTime - DateTime.Now);
+                    timeLeft = "Remaining time :" + left.Days + "d " + left.Hours +
+                        "h " + left.Minutes + "m " + left.Seconds + "s ";
+                }
+                else
+                {
+                    timeLeft = "Finished";
+                }
+
+            }
+            @Html.DisplayName(timeLeft)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentHighestBid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentOwnerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartTime)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", "Auction", new { id = item.Id }, null) 
+            @{
+                if (Session["LoggedUser"] != null)
+                {
+                    var acc = (AuctionWebApplication.AuctionService.Account)Session["LoggedUser"];
+
+                    if (item.Bids.Length == 0 && acc.Id == item.Seller.Id)
+                    {
+                    @Html.ActionLink("Delete", "Delete", "Auction", new { id = item.Id }, null)
+                        }
+                    }
+                }
+
+        </td>
+    </tr>
+}
+
+</table>

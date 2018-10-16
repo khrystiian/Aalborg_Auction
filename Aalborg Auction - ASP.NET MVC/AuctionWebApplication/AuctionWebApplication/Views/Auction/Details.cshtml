@@ -1,0 +1,129 @@
+﻿@model AuctionWebApplication.AuctionService.Auction
+@{
+    ViewBag.Title = "Details";
+}
+<br />
+<h2>Auction details</h2>
+<br />
+<br />
+<nav class="navbar navbar-default">
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.LabelFor(model => model.Seller.UserName, "Seller")
+            </dt>
+            <dd>
+                @{
+                    int id = Model.Seller.Id;
+                    string name = Model.Seller.UserName;
+                    string currentOwnerName = " ";
+                    if (Model.CurrentOwnerName != null)
+                    {
+                        currentOwnerName = Model.CurrentOwnerName;
+                    }
+                    TempData["bidId"] = Model.Id;
+                }
+                @Html.ActionLink(name, "AllAuctionsForAcc", "Account", new { accountId = id }, null)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(model => model.CurrentHighestBid, "Highest bid")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CurrentHighestBid)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(model => model.CurrentOwnerName, "Highest bidder name")
+            </dt>
+
+            <dd>
+                @Html.ActionLink(currentOwnerName, "AllAuctionsForAcc", "Account", new { accountId = id }, null)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Product.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Product.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Product.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Product.Description)
+            </dd>
+            <dt>
+                @Html.LabelFor(model => model.Product.Price, "Initial price")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Product.Price)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StartTime)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EndTime)
+            </dd>
+            <dt>
+                Picture
+            </dt>
+            <dd>
+                @{
+                    <img src="@Url.Content(Model.Product.Picture)" alt="Image" height="120" />
+                }
+            </dd>
+            <dt>
+                Status
+            </dt>
+            <dd>
+                @{ string status;
+                    if (Model.Active)
+                    {
+                        status = "Active";
+                    }
+                    else
+                    {
+                        status = "Inactive";
+                    }
+                }
+                @Html.LabelFor(model => model.Active, status)
+            </dd>
+        </dl>
+    </div>
+    </nav>
+
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+        @{
+            if (Model.Bids != null && Model.Bids.Count() != 0)
+            {
+                @Html.ActionLink("See bids", "Index", "Bid", new { id = Model.Id }, null) 
+            }
+            else
+            {
+                @Html.LabelFor(model => model.Active, "No bids")
+            }
+        }
+
+    </p>
+<br />
+<br />

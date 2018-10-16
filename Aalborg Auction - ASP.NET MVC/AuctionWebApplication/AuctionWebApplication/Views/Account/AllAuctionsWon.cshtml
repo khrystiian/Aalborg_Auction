@@ -1,0 +1,47 @@
+﻿@model IEnumerable<AuctionWebApplication.AuctionService.Auction>
+
+@{
+    ViewBag.Title = "All won auction";
+}
+
+<h2>All Auctions Won</h2>
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentHighestBid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentOwnerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentHighestBid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentOwnerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartTime)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details","Auction", new { id = item.Id },null) 
+        </td>
+    </tr>
+}
+
+</table>

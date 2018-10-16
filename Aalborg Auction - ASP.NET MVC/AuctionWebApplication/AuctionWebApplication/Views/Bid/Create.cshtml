@@ -1,0 +1,177 @@
+﻿@model AuctionWebApplication.AuctionService.Bid
+
+@{
+    ViewBag.Title = "Create";
+}
+<br />
+<h2>Please place your bid</h2>
+<br />
+<nav class="navbar navbar-default">
+<br />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="has-error">@TempData["ErrorMessage"]</div>
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.LabelFor(model => model.Auction.Seller.UserName, "Seller")
+            </dt>
+            <dd>
+                @{
+                    int id = Model.Auction.Seller.Id;
+                    string name = Model.Auction.Seller.UserName;
+                    TempData["bidId"] = Model.Id;
+                }
+                @Html.ActionLink(name, "AllAuctionsForAcc", "Account", new { accountId = id }, null)
+
+            </dd>
+
+            <dt>
+                @Html.LabelFor(model => model.Auction.CurrentHighestBid, "Highest bid")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Auction.CurrentHighestBid)
+            </dd>
+
+            <dt>
+                @Html.LabelFor(model => model.Auction.CurrentOwnerName, "Highest bidder name")
+            </dt>
+
+            <dd>
+                @Html.ActionLink(name, "AllAuctionsForAcc", "Account", new { accountId = id }, null)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Auction.Product.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Auction.Product.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Auction.Product.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Auction.Product.Description)
+            </dd>
+            <dt>
+                @Html.LabelFor(model => model.Auction.Product.Price, "Initial price")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Auction.Product.Price)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Auction.StartTime)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Auction.StartTime)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Auction.EndTime)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Auction.EndTime)
+            </dd>
+
+            <dt>Remaining time</dt>
+            <dd>
+
+                <h4 id="countdown"></h4>
+
+                <script>
+                    var dt = '@ViewBag.Rem_Time';
+                    var dateAr = dt.split('-');
+                    var newDate = dateAr[1] + '/' + dateAr[0] + '/' + dateAr[2];
+
+                    var end = new Date(dateAr[1] + '/' + dateAr[0] + '/' + dateAr[2]);
+
+                    var _second = 1000;
+                    var _minute = _second * 60;
+                    var _hour = _minute * 60;
+                    var _day = _hour * 24;
+                    var timer;
+
+                    function showRemaining() {
+                        var now = new Date();
+                        var distance = end - now;
+                        if (distance < 0) {
+                            clearInterval(timer);
+                            document.getElementById('countdown').innerHTML = 'EXPIRED!';
+                            window.location.href = '/Home/Index';
+
+                            return;
+                        }
+                        var days = Math.floor(distance / _day);
+                        var hours = Math.floor((distance % _day) / _hour);
+                        var minutes = Math.floor((distance % _hour) / _minute);
+                        var seconds = Math.floor((distance % _minute) / _second);
+
+                        document.getElementById('countdown').innerHTML = days + 'days ';
+                        document.getElementById('countdown').innerHTML += hours + 'hrs ';
+                        document.getElementById('countdown').innerHTML += minutes + 'mins ';
+                        document.getElementById('countdown').innerHTML += seconds + 'secs';
+                    }
+
+                    timer = setInterval(showRemaining, 1000);
+                </script>
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Auction.Product.Picture)
+            </dt>
+
+            <dd>
+                @{                    
+                  <img src="@Url.Content(Model.Auction.Product.Picture)" alt="Image" height="120" />                    
+                }
+            </dd>
+        </dl>
+
+    
+        <div class="form-horizontal">
+            <h4>Enter your price bellow !</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Bid" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+                    }
+    </nav>
+
+    <div>
+        <span class="label label-default">@Html.ActionLink("Back to Auctions", "Index", "Home")</span>
+        @{
+            if (Model.Auction.Bids.Length != 0)
+            {
+                @Html.ActionLink("See bids", "Index", "Bid", new { id = Model.AuctionId }, null)
+            }
+        }
+
+</div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

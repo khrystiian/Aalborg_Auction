@@ -1,0 +1,140 @@
+﻿body {
+    /*padding-top: 50px;
+    padding-bottom: 20px;*/
+width: auto;
+margin-left: 0 auto;
+margin-right: 0  auto;
+display: block;
+    background-color: white; 
+     
+}
+@media screen {
+  body {
+    width:80%;
+  }
+}
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+div.navbar-fixed-top{
+    background-color: #e8ca20;
+    position:relative;
+    top: 10px;
+    left: 22px;
+    width: 1490px;
+    height: 50px;
+}
+h1{
+    position: relative;
+    top: 5px;
+    left: 5px;
+    font-family: 'Britannic', Times, serif;
+    color:#634444;
+}
+h2{
+    position:relative;
+    left: 320px;
+    color:#752500;
+    font-weight: bold; 
+}
+ul.topbar-content{
+   position:relative;
+   bottom: 35px;
+   left: 10px;
+   float: right;
+}
+ul.topbar-content li:hover{
+   color: #808080;
+    border-radius: 7px;
+    list-style-type: none;
+}
+ul.topbar-content li{
+    display: inline-block;
+    font-size:x-large;
+    margin:0 40px 40px 0;    
+}
+form.search{
+    position:relative;
+    bottom: 120px; 
+    left: 320px;
+    float: left;
+}
+.searchBar input[type=text]{
+    width: 410px;
+    height:40px;
+    font-family: Arial;
+    font-size: 18px;
+    border-radius: 20px;
+    background-image: url('http://www.dliflc.edu/wp-content/themes/DLIFLC/images/icon-find.png');
+    background-repeat: no-repeat;    
+    background-position-x: right; 
+} 
+div.searchBar{  
+    position:relative;
+    float:left;
+    left: 350px;
+    bottom: 45px;
+}
+/*footer*/
+.footer {
+    background-color: rgba(47, 28, 28, 1.00);
+    position:relative;
+    bottom: 0;
+    width: 1840px;
+    right: 380px;
+    height: 100px;
+    float:left;
+}
+.footer ul li{
+    display: inline;
+    margin:0 30px 30px 0;
+    position: relative;
+    top: 40px;
+    left: 900px;
+} 
+div.social ul li{
+    margin:0 10px 10px 0;
+    position: relative; 
+    left: 350px;
+    top: -16px;
+}
+#imaginary_container{
+    margin-top:-7.5%; 
+    margin-right: 230px;
+    position:relative;
+    right:320px;
+}
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+.pwd {
+    position: relative;
+    left: 50px;
+}

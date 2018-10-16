@@ -1,0 +1,72 @@
+﻿@using System.Web.UI.WebControls
+@using AuctionWebApplication.AuctionService;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Aalborg Auction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head  >
+<body>
+  
+    <div class="navbar-fixed-top">
+            <h1>Aalborg Auction</h1> 
+        <div class="searchBar">
+            <form form method="get" action="@Url.Action("List", "Auction")">
+                <div class="input-placeholder">
+                    <div class="inputSearch">
+                        <span id="request" style="font-size:20px">@Html.TextBox("Search", "", new { placeholder = "Search..", style = "font-style:italic" })</span>      
+                  </div>
+                </div>
+              </form>
+            </div>
+       
+            <div class="navbar-collapse collapse">
+                <ul class="topbar-content">
+                    <li>@Html.ActionLink("Home", "Index", "Auction")</li>
+                    <li>@Html.ActionLink("Categories", "Index", "Category")</li>
+
+                    @if (Session["LoggedUser"] == null)
+                    {
+                        <li>@Html.ActionLink("Log in", "Login", "Account")</li>
+                       <li>@Html.ActionLink("Register", "Create", "Account")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Account", "Edit", "Account")</li>
+                        <li>@Html.ActionLink("New Auction", "Create", "Auction")</li>
+                        <li>@Html.ActionLink("Log out", "LogOut", "Account")</li>
+                    }
+                </ul>
+            </div>
+</div>
+  
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer class="footer">
+            <div class="footer-inner">
+                <ul>
+                    <li><a href="https://ethics.csc.ncsu.edu/commerce/auctions/study.php" style="text-decoration:none;"><span style="color:white"><font face="arial" , size="2">About online auctions</font></span></a></li>
+                    <li><a href="http://www.aalborg.dk/" style="text-decoration:none;"><span style="color:white"><font face="arial" , size="2">Aalborg Dk</font></span></a></li>
+                </ul>
+            </div>
+            <div class="social">
+                <ul>
+                    <li><img src="http://cx.aos.ask.com/life123/auction-websites.s600x600.jpg" alt="logo" width="162" height="72" ></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,339 @@
+﻿@model IEnumerable<AuctionWebApplication.AuctionService.Auction>
+
+@{
+        ViewBag.Title = "Auctions";
+    AuctionWebApplication.AuctionService.IAuctionProjectService service = new AuctionWebApplication.AuctionService.AuctionProjectServiceClient("secure");
+}
+<br />
+<h2>Welcome. All auctions bellow !</h2>
+<br />
+<div class="container">
+
+    <form id='form-id'>
+        <input id='activeAuction' name='test' type='radio'  /> Active Auctions
+        <br />  
+        <input id='inactiveAuction' name='test' type='radio' />  Inactive Auctions 
+        <br />
+    </form>
+</div>
+
+<script>
+$(document).ready(function ()
+{
+  
+  $("#activeAuction").click(function()
+  {
+      $("#status-finished:hidden").show('slow');
+      $("#status-in-progress").hide();
+
+        });
+   $("#activeAuction").click(function()
+  {
+            if($('activeAuction').prop('checked')===false)
+   {
+                $('#status-finished').hide();
+            }
+        });
+
+
+  $("#inactiveAuction").click(function()
+  {
+      $("#status-in-progress:hidden").show('slow');
+    $("#status-finished").hide();
+
+    });
+   $("#inactiveAuction").click(function()
+  {
+       if ($('status-in-progress').prop('checked') === false)
+   {
+            $('#status-in-progress').hide();
+        }
+    });
+});
+</script>
+<br />
+    <br />
+<nav class="navbar navbar-default">
+    <div id="status-finished">
+        <table class="table">
+            <tr>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Seller</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Highest bid</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Bid owner</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Item</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Description</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Initial price</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Picture</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Start time</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">End time</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Status</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Take action</font></i></p>
+                </th>
+            </tr>
+
+
+
+            @foreach (var item in Model)
+            {
+                if (item.Active)
+                {
+                    int id = item.Seller.Id;
+                    string name = item.Seller.UserName;
+                    int bidderId = 0;
+                    if (item.Bids.Length != 0)
+                    {
+                        double price = service.GetHighestPriceForAuction(item);
+                        var bid = service.GetBidForAuctionWherePrice(price, item);
+                        bidderId = bid.BidOwnerId;
+                    }
+                    string currentOwnerName = " ";
+                    if (item.CurrentOwnerName != null)
+                    {
+                        currentOwnerName = item.CurrentOwnerName;
+                    }
+
+                    TempData["bidId"] = item.Id;
+                    <tr>
+
+
+                        <td>
+                            @Html.ActionLink(name, "Details", "Account", new { id = id }, null)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CurrentHighestBid)
+                        </td>
+                        <td>
+                            @{
+                                if (bidderId != 0)
+                                {
+                                    @Html.ActionLink(currentOwnerName, "Details", "Account", new { id = bidderId }, null)
+
+                                }
+                            }
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Product.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Product.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Product.Price)
+                        </td>
+                        <td>
+                            @{
+                                string path = item.Product.Picture;
+                                if (path != null)
+                                {
+                                   
+                                <img src="@Url.Content(path)" alt="Image" height="120"/>
+                                }
+                            }
+        
+                           
+                            
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndTime)
+                        </td>
+                        <td>
+                            @{
+                                string timeLeft;
+                                if (item.Active)
+                                {
+                                    var left = (item.EndTime - DateTime.Now);
+                                    timeLeft = "Remaining time :" + left.Days + "d " + left.Hours +
+                                        "h " + left.Minutes + "m " + left.Seconds + "s ";
+
+                                }
+                                else
+                                {
+                                    timeLeft = "Finished";
+                                }
+
+                            }
+                            @Html.DisplayName(timeLeft)
+                        </td>
+                        <td>
+                            @if (item.Active)
+                            {
+                                @Html.ActionLink("Make bid", "Create", "Bid", new { id = item.Id }, null)
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Details", "Details", new { id = item.Id })
+                            }
+
+                        </td>
+                    </tr>
+                                    }
+
+
+                                }
+
+        </table>
+    </div>
+    </nav>
+    <br />
+    <br />
+<nav class="navbar navbar-default">
+    <div id="status-in-progress">
+        <table class="table">
+            <tr>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Seller</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Highest bid</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Bid owner</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Item</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Description</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Initial price</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Picture</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Start time</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">End time</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Status</font></i></p>
+                </th>
+                <th>
+                    <p><i><font face="times new roman" , color="#A52A2A" size="4">Show more !</font></i></p>
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+
+                if (!item.Active)
+                {
+                    int id = item.Seller.Id;
+                    string name = item.Seller.UserName;
+                    int bidderId = 0;
+                    if (item.Bids.Length != 0)
+                    {
+                        double price = service.GetHighestPriceForAuction(item);
+                        var bid = service.GetBidForAuctionWherePrice(price, item);
+                        bidderId = bid.BidOwnerId;
+                    }
+                    string currentOwnerName = " ";
+                    if (item.CurrentOwnerName != null)
+                    {
+                        currentOwnerName = item.CurrentOwnerName;
+                    }
+
+                    TempData["bidId"] = item.Id;
+                    <tr>
+                        <td>
+                            @Html.ActionLink(name, "Details", "Account", new { id = id }, null)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CurrentHighestBid)
+                        </td>
+                        <td>
+                            @{
+                                if (bidderId != 0)
+                                {
+                                    @Html.ActionLink(currentOwnerName, "Details", "Account", new { id = bidderId }, null)
+
+                                }
+                            }
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Product.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Product.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Product.Price)
+                        </td>
+                        <td>@{
+                            string path = item.Product.Picture;
+                            if (path != null)
+                            {
+                               
+                                <img src="@Url.Content(path)" alt="Image" height="120" />
+                            }
+                        }
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndTime)
+                        </td>
+                        <td>
+                            @{
+                                string timeLeft;
+                                if (item.Active)
+                                {
+                                    var left = (item.EndTime - DateTime.Now);
+                                    timeLeft = "Remaining time :" + left.Days + "d " + left.Hours +
+                                        "h " + left.Minutes + "m " + left.Seconds + "s ";
+                                }
+                                else
+                                {
+                                    timeLeft = "Finished";
+
+                                }
+
+                            }
+                            @Html.DisplayName(timeLeft)
+                        </td>
+                        <td>
+                            @if (item.Active)
+                            {
+                                @Html.ActionLink("Make bid", "Create", "Bid", new { id = item.Id }, null)
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Details", "Details", new { Id = item.Id })
+                            }
+
+                        </td>
+                    </tr>
+                                    }
+                                }
+
+        </table>
+    </div>
+    </nav>

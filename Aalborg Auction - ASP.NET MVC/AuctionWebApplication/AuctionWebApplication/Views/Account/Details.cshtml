@@ -1,0 +1,73 @@
+﻿@model AuctionWebApplication.AuctionService.Account
+
+@{
+    ViewBag.Title = "Details";
+}
+<br />
+<h2>Account details</h2>
+<br />
+    <div>
+<nav class="navbar navbar-default">
+        <h4>Your information</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                First name
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Fname)
+            </dd>
+
+            <dt>
+                Last name
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Lname)
+            </dd>
+            <dt>
+                Phone number
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+
+            <dt>
+                Username
+            </dt>
+            <dd>
+                @Html.DisplayNameFor(model => model.UserName)
+            </dd>
+
+        </dl>
+    </nav>
+        <div>
+            <span class="label label-default">@Html.ActionLink("Auctions where there is a bid", "AllAuctionsForAcc", new { accountId = Model.Id }, null)</span>
+            <span class="label label-default">@Html.ActionLink("Products selling", "AllAuctionsWhereSeller", new { accountId = Model.Id }, null)</span>
+            <span class="label label-default">@Html.ActionLink("Auctions won", "AllAuctionsWon", new { accountId = Model.Id }, null)</span>
+        </div>
+    </div>
+<br />
+<br />
+<br />
+   <br />
+<br />
+<br />

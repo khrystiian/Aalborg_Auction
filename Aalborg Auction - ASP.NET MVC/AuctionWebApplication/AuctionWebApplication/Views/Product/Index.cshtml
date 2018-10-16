@@ -1,0 +1,63 @@
+﻿@model IEnumerable<AuctionWebApplication.AuctionService.Product>
+
+@{
+    ViewBag.Title = "Products";
+}
+<br />
+<h2>All the products</h2>
+<br />
+<br />
+<p>
+    <span class="label label-default">@Html.ActionLink("Sell your product", "Create")</span>
+</p>
+<nav class="navbar navbar-default">
+    <table class="table">
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.CategoryId)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Picture)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.CategoryId)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Picture)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |*@
+                    <span class="label label-primary">@Html.ActionLink("Details", "Details", new { CategoryId = item.Id })</span>
+                    @*@Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+</td>
+            </tr>
+        }
+
+    </table>
+    </nav>
+<br />
+<br />

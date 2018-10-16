@@ -1,0 +1,116 @@
+﻿@model IEnumerable<AuctionWebApplication.AuctionService.Auction>
+
+@{
+    ViewBag.Title = "Auctions";
+}
+
+<h2>Auctions</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Highest bid
+        </th>
+        <th>
+            Highest bid owner
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.Description)
+        </th>
+        <th>
+            Initial price
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.Picture)
+        </th>
+        <th>
+            Start time
+        </th>
+        <th>
+            End time
+        </th>
+        <th>
+            Status
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentHighestBid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentOwnerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Price)
+            </td>
+            <td>
+                @{
+                    
+                  
+                        string path = item.Product.Picture;
+                        if (path != null)
+                        {
+                            
+                        <img src="@Url.Content(path)" alt="Image" height="120" />
+                            }
+                        }
+                    
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndTime)
+            </td>
+            <td>
+                @{
+                    string timeLeft = "Finished";
+                    if (item != null)
+                    {
+                        if (item.EndTime != null)
+                        {
+                            if (item.EndTime > DateTime.Now)
+                            {
+                                var left = (item.EndTime - DateTime.Now);
+                                timeLeft = "Remaining time :" + left.Days + "d " + left.Hours +
+                                    "h " + left.Minutes + "m " + left.Seconds + "s ";
+                            }
+                        }
+                    }
+                }
+                @Html.DisplayName(timeLeft)
+            </td>
+            <td>
+                @{ 
+                    if (item != null)
+                    {
+                        if (item.Active)
+                        {
+                        @Html.ActionLink("Make bid", "Create", "Bid", new { id = item.Id }, null)
+                        }
+                        else
+                        {
+                        @Html.ActionLink("Details", "Details", new { id = item.Id })
+                            }
+                        }
+                    }
+
+
+            </td>
+        </tr>
+                    }
+
+</table>

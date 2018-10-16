@@ -1,0 +1,59 @@
+﻿
+@model AuctionWebApplication.AuctionService.Account
+
+@{
+    ViewBag.Title = "Login";
+}
+<br />
+<br />
+
+<h2>Please login</h2>
+<br />
+<br />
+<br />
+<nav class="navbar navbar-default">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+
+            <div class="has-error">@TempData["ErrorMessage"]</div>
+            <div class="form-group">
+                @Html.LabelForModel("Username", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(model => model.Password, htmlAttributes: new { @class = "form-control", required = "required" })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="LogIn" class="btn btn-default" />
+                </div>
+            </div>
+
+        </div>
+    }
+    </nav>
+<br />
+<br />
+<br />
+<br />
+<br />

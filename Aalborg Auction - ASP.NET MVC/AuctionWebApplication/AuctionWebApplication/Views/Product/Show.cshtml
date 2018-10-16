@@ -1,0 +1,54 @@
+﻿
+           
+@model AuctionWebApplication.AuctionService.Product
+    
+@{  
+    WebImage photo = null;
+    var newFileName = "";
+    AuctionWebApplication.AuctionService.Product pr = null;
+
+    if (Session["Auction"] != null)
+    {
+        pr = Model;
+        Session["pr"] = pr;
+    }
+    if (this.IsPost)
+    {
+        photo = WebImage.GetImageFromRequest();
+        if (photo != null)
+        {
+            newFileName = Guid.NewGuid().ToString() + "_" +
+                Path.GetFileName(photo.FileName);
+            string path = @"~/pic/";
+            pr = (AuctionWebApplication.AuctionService.Product) Session["pr"];
+            pr.Picture = path + newFileName;
+            photo.Save(pr.Picture);
+        }
+    }
+}
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  
+<form action="" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <legend> Upload a picture bellow </legend>
+        <img id="img" alt="your image" width="150" height="150" />
+            <input type="file" name="image" id="myFile" required="required" onchange="document.getElementById('img').src = window.URL.createObjectURL(this.files[0])">
+       <br />
+            <input type="submit" value="Upload" />
+            <input type="button" value="Create the auction" onclick="location.href='@Url.Action("Show", "Product")'" />           
+
+</fieldset>
+</form>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myFile").required;
+
+}
+</script>
