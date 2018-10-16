@@ -1,0 +1,12 @@
+E:\ProjectSem3\MyFirstProject\AuctionProjectWinForm\AuctionProject\bin\Release\AuctionProject.exe.config
+E:\ProjectSem3\MyFirstProject\AuctionProjectWinForm\AuctionProject\bin\Release\AuctionProject.exe
+E:\ProjectSem3\MyFirstProject\AuctionProjectWinForm\AuctionProject\bin\Release\AuctionProject.pdb
+E:\ProjectSem3\MyFirstProject\AuctionProjectWinForm\AuctionProject\obj\Release\AuctionProject.AccountForm.resources
+E:\ProjectSem3\MyFirstProject\AuctionProjectWinForm\AuctionProject\obj\Release\AuctionProject.Form1.resources
+E:\ProjectSem3\MyFirstProject\AuctionProjectWinForm\AuctionProject\obj\Release\AuctionProject.LoginForm.resources
+E:\ProjectSem3\MyFirstProject\AuctionProjectWinForm\AuctionProject\obj\Release\AuctionProject.Properties.Resources.resources
+E:\ProjectSem3\MyFirstProject\AuctionProjectWinForm\AuctionProject\obj\Release\AuctionProject.RegistrationForm.resources
+E:\ProjectSem3\MyFirstProject\AuctionProjectWinForm\AuctionProject\obj\Release\AuctionProject.csproj.GenerateResource.Cache
+E:\ProjectSem3\MyFirstProject\AuctionProjectWinForm\AuctionProject\obj\Release\AuctionProject.exe
+E:\ProjectSem3\MyFirstProject\AuctionProjectWinForm\AuctionProject\obj\Release\AuctionProject.pdb
+E:\ProjectSem3\MyFirstProject\AuctionProjectWinForm\AuctionProject\obj\Release\AuctionProject.csprojResolveAssemblyReference.cache
