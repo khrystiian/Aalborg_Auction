@@ -1,0 +1,16 @@
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Database.CategoryRepository.RemoveCategoryByName(String name) in E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\Database\CategoryRepository.cs:line 37
+   at BussinessLayer.CategoryController.RemoveCategoryByName(String name) in E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\BussinessLayer\CategoryController.cs:line 32
+   at WcfServiceLibraryAuction.AuctionProjectService.RemoveCategoryByName(String name) in E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\WcfServiceLibraryAuction\AuctionProjectService.cs:line 322
+   at SyncInvokeRemoveCategoryByName(Object , Object[] , Object[] )
+   at System.ServiceModel.Dispatcher.SyncMethodInvoker.Invoke(Object instance, Object[] inputs, Object[]& outputs)
+   at System.ServiceModel.Dispatcher.DispatchOperationRuntime.InvokeBegin(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage5(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage41(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage4(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage31(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage3(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage2(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage11(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage1(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.MessageRpc.Process(Boolean isOperationContextSet)

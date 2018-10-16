@@ -1,0 +1,9 @@
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\AuctionProject\bin\Debug\AuctionProject.dll
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\AuctionProject\bin\Debug\AuctionProject.pdb
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\AuctionProject\bin\Debug\EntityFramework.dll
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\AuctionProject\bin\Debug\EntityFramework.SqlServer.dll
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\AuctionProject\bin\Debug\EntityFramework.xml
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\AuctionProject\bin\Debug\EntityFramework.SqlServer.xml
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\AuctionProject\obj\Debug\Core.csprojResolveAssemblyReference.cache
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\AuctionProject\obj\Debug\AuctionProject.dll
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\AuctionProject\obj\Debug\AuctionProject.pdb

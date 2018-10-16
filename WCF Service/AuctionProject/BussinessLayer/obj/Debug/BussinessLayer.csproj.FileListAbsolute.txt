@@ -1,0 +1,14 @@
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\BussinessLayer\bin\Debug\BussinessLayer.dll.config
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\BussinessLayer\bin\Debug\BussinessLayer.dll
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\BussinessLayer\bin\Debug\BussinessLayer.pdb
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\BussinessLayer\bin\Debug\AuctionProject.dll
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\BussinessLayer\bin\Debug\Database.dll
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\BussinessLayer\bin\Debug\EntityFramework.dll
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\BussinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\BussinessLayer\bin\Debug\AuctionProject.pdb
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\BussinessLayer\bin\Debug\Database.pdb
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\BussinessLayer\bin\Debug\EntityFramework.xml
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\BussinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\BussinessLayer\obj\Debug\BussinessLayer.csprojResolveAssemblyReference.cache
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\BussinessLayer\obj\Debug\BussinessLayer.dll
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\BussinessLayer\obj\Debug\BussinessLayer.pdb

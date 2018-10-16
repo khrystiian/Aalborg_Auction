@@ -1,0 +1,23 @@
+System.ServiceModel.CommunicationException: The socket connection was aborted. This could be caused by an error processing your message or a receive timeout being exceeded by the remote host, or an underlying network resource issue. Local socket timeout was '00:00:59.9843753'. ---> System.IO.IOException: The write operation failed, see inner exception. ---> System.ServiceModel.CommunicationException: The socket connection was aborted. This could be caused by an error processing your message or a receive timeout being exceeded by the remote host, or an underlying network resource issue. Local socket timeout was '00:00:59.9843753'. ---> System.Net.Sockets.SocketException: An existing connection was forcibly closed by the remote host
+   at System.Net.Sockets.Socket.Send(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.ServiceModel.Channels.SocketConnection.Write(Byte[] buffer, Int32 offset, Int32 size, Boolean immediate, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+   at System.ServiceModel.Channels.SocketConnection.Write(Byte[] buffer, Int32 offset, Int32 size, Boolean immediate, TimeSpan timeout)
+   at System.ServiceModel.Channels.BufferedConnection.WriteNow(Byte[] buffer, Int32 offset, Int32 size, TimeSpan timeout, BufferManager bufferManager)
+   at System.ServiceModel.Channels.BufferedConnection.Write(Byte[] buffer, Int32 offset, Int32 size, Boolean immediate, TimeSpan timeout)
+   at System.ServiceModel.Channels.ConnectionStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Net.Security.NegotiateStream.StartWriting(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.NegotiateStream.ProcessWrite(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   --- End of inner exception stack trace ---
+   at System.Net.Security.NegotiateStream.ProcessWrite(Byte[] buffer, Int32 offset, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.NegotiateStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.ServiceModel.Channels.StreamConnection.Write(Byte[] buffer, Int32 offset, Int32 size, Boolean immediate, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+   at System.ServiceModel.Channels.StreamConnection.Write(Byte[] buffer, Int32 offset, Int32 size, Boolean immediate, TimeSpan timeout)
+   at System.ServiceModel.Channels.StreamConnection.Write(Byte[] buffer, Int32 offset, Int32 size, Boolean immediate, TimeSpan timeout, BufferManager bufferManager)
+   at System.ServiceModel.Channels.FramingDuplexSessionChannel.OnSendCore(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.TransportDuplexSessionChannel.OnSend(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.OutputChannel.Send(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.DuplexChannelBinder.DuplexRequestContext.OnReply(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestContextBase.Reply(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.Reply(MessageRpc& rpc)

@@ -1,0 +1,12 @@
+System.ServiceModel.CommunicationException: An operation was attempted on a nonexistent network connection ---> System.Net.HttpListenerException: An operation was attempted on a nonexistent network connection
+   at System.Net.HttpResponseStream.Write(Byte[] buffer, Int32 offset, Int32 size)
+   at System.ServiceModel.Channels.BytesReadPositionStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.ServiceModel.Channels.HttpOutput.ListenerResponseHttpOutput.ListenerResponseOutputStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   --- End of inner exception stack trace ---
+   at System.ServiceModel.Channels.HttpOutput.ListenerResponseHttpOutput.ListenerResponseOutputStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   at System.ServiceModel.Channels.HttpPipeline.EmptyHttpPipeline.SendReplyCore(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.HttpPipeline.EmptyHttpPipeline.SendReply(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.HttpRequestContext.OnReply(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestContextBase.Reply(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.Reply(MessageRpc& rpc)

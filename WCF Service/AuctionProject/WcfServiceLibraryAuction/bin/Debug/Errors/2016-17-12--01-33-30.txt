@@ -1,0 +1,15 @@
+System.ServiceModel.CommunicationException: The socket connection was aborted. This could be caused by an error processing your message or a receive timeout being exceeded by the remote host, or an underlying network resource issue. Local socket timeout was '10675199.02:48:05.4775807'. ---> System.IO.IOException: The read operation failed, see inner exception. ---> System.ServiceModel.CommunicationException: The socket connection was aborted. This could be caused by an error processing your message or a receive timeout being exceeded by the remote host, or an underlying network resource issue. Local socket timeout was '10675199.02:48:05.4775807'. ---> System.Net.Sockets.SocketException: An existing connection was forcibly closed by the remote host
+   at System.ServiceModel.Channels.SocketConnection.HandleReceiveAsyncCompleted()
+   at System.ServiceModel.Channels.SocketConnection.OnReceiveAsync(Object sender, SocketAsyncEventArgs eventArgs)
+   --- End of inner exception stack trace ---
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Channels.ConnectionStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.FixedSizeReader.ReadCallback(IAsyncResult transportResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Security.NegotiateStream.EndRead(IAsyncResult asyncResult)
+   at System.ServiceModel.Channels.StreamConnection.EndRead()
+   --- End of inner exception stack trace ---
+   at System.Runtime.AsyncResult.End[TAsyncResult](IAsyncResult result)
+   at System.ServiceModel.Channels.TransportDuplexSessionChannel.EndTryReceive(IAsyncResult result, Message& message)
+   at System.ServiceModel.Dispatcher.DuplexChannelBinder.EndTryReceive(IAsyncResult result, RequestContext& requestContext)
+   at System.ServiceModel.Dispatcher.ErrorHandlingReceiver.EndTryReceive(IAsyncResult result, RequestContext& requestContext)

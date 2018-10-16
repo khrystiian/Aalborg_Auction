@@ -1,0 +1,1084 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AuctionProjectService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfServiceLibraryAuction/AuctionProjectService/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfServiceLibraryAuction/AuctionProjectService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfServiceLibraryAuction/AuctionProjectService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Core" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAuctionProjectService_GetAccountById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountById" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAccountById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_HashAndSaltPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:HashAndSaltPassword" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_HashAndSaltPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HashAndSaltPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_AddAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAccount" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_AddAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAccounts" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAccount" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveAccountById_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAccountById" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveAccountById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAccountByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_UpdateAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAccount" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_UpdateAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAccountByUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountByUsername" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAccountByUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAccountByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountByEmail" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAccountByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAccountWithObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountWithObjects" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAccountWithObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountWithObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAuctionById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuctionById" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAuctionById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuctionByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_AddAuction_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAuction" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_AddAuction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAuctionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllAuctions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAuctions" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllAuctions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAuctionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllAuctionsWithObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAuctionsWithObjects" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllAuctionsWithObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAuctionsWithObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveAuction_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAuction" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveAuction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAuctionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveAuctionById_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAuctionById" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveAuctionById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAuctionByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_UpdateAuction_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAuction" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_UpdateAuction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAuctionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAuctionWithProductId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuctionWithProductId" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAuctionWithProductId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuctionWithProductIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_getAllAucionsForProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllAucionsForProducts" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_getAllAucionsForProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllAucionsForProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAuctionsWhereSellerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuctionsWhereSellerId" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAuctionsWhereSellerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuctionsWhereSellerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAuctionsWhereWinnerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuctionsWhereWinnerId" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAuctionsWhereWinnerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuctionsWhereWinnerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAuctionsWithLessTimeLeft_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuctionsWithLessTimeLeft" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAuctionsWithLessTimeLeft_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuctionsWithLessTimeLeftResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetMostRecentAuctions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMostRecentAuctions" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetMostRecentAuctions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMostRecentAuctionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAuctionByIdWithObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuctionByIdWithObjects" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAuctionByIdWithObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuctionByIdWithObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetCategorytById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategorytById" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetCategorytById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategorytByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_AddCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategory" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_AddCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategories" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCategory" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveCategoryById_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCategoryById" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveCategoryById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCategoryByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_UpdateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategory" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_UpdateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetCategoryByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryByName" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetCategoryByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveCategoryByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCategoryByName" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveCategoryByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveCategoryByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetCategoryWithObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryWithObjects" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetCategoryWithObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryWithObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetBidById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBidById" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetBidById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBidByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_CreateBid_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBid" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_CreateBid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_AddBid_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBid" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_AddBid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllBids_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBids" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllBids_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBidsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveBid_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveBid" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveBid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveBidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveBidById_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveBidById" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveBidById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveBidByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_UpdateBid_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBid" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_UpdateBid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllBidsByAccountId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBidsByAccountId" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllBidsByAccountId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBidsByAccountIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllBidsByAuctionId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBidsByAuctionId" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllBidsByAuctionId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBidsByAuctionIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetBidWithObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBidWithObjects" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetBidWithObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBidWithObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetProductById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductById" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetProductById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllProductsInCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductsInCategory" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllProductsInCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductsInCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_AddProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProduct" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_AddProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProducts" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetAllProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProduct" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveProductById_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductById" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_RemoveProductById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveProductByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_UpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_UpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_FindProductsWithPriceMoreThan_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProductsWithPriceMoreThan" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_FindProductsWithPriceMoreThan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProductsWithPriceMoreThanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetProductsWithName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsWithName" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetProductsWithName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsWithNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetProductsWithDescription_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsWithDescription" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetProductsWithDescription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsWithDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_FindProductsWithPriceLessThan_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProductsWithPriceLessThan" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_FindProductsWithPriceLessThan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProductsWithPriceLessThanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetProductWithObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductWithObjects" />
+  </wsdl:message>
+  <wsdl:message name="IAuctionProjectService_GetProductWithObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductWithObjectsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAuctionProjectService">
+    <wsdl:operation name="GetAccountById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAccountById" message="tns:IAuctionProjectService_GetAccountById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAccountByIdResponse" message="tns:IAuctionProjectService_GetAccountById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HashAndSaltPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/HashAndSaltPassword" message="tns:IAuctionProjectService_HashAndSaltPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/HashAndSaltPasswordResponse" message="tns:IAuctionProjectService_HashAndSaltPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/Login" message="tns:IAuctionProjectService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/LoginResponse" message="tns:IAuctionProjectService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/AddAccount" message="tns:IAuctionProjectService_AddAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/AddAccountResponse" message="tns:IAuctionProjectService_AddAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAccounts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllAccounts" message="tns:IAuctionProjectService_GetAllAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllAccountsResponse" message="tns:IAuctionProjectService_GetAllAccounts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveAccount" message="tns:IAuctionProjectService_RemoveAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveAccountResponse" message="tns:IAuctionProjectService_RemoveAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAccountById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveAccountById" message="tns:IAuctionProjectService_RemoveAccountById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveAccountByIdResponse" message="tns:IAuctionProjectService_RemoveAccountById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/UpdateAccount" message="tns:IAuctionProjectService_UpdateAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/UpdateAccountResponse" message="tns:IAuctionProjectService_UpdateAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountByUsername">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAccountByUsername" message="tns:IAuctionProjectService_GetAccountByUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAccountByUsernameResponse" message="tns:IAuctionProjectService_GetAccountByUsername_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountByEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAccountByEmail" message="tns:IAuctionProjectService_GetAccountByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAccountByEmailResponse" message="tns:IAuctionProjectService_GetAccountByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountWithObjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAccountWithObjects" message="tns:IAuctionProjectService_GetAccountWithObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAccountWithObjectsResponse" message="tns:IAuctionProjectService_GetAccountWithObjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuctionById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAuctionById" message="tns:IAuctionProjectService_GetAuctionById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAuctionByIdResponse" message="tns:IAuctionProjectService_GetAuctionById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAuction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/AddAuction" message="tns:IAuctionProjectService_AddAuction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/AddAuctionResponse" message="tns:IAuctionProjectService_AddAuction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuctions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllAuctions" message="tns:IAuctionProjectService_GetAllAuctions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllAuctionsResponse" message="tns:IAuctionProjectService_GetAllAuctions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuctionsWithObjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllAuctionsWithObjects" message="tns:IAuctionProjectService_GetAllAuctionsWithObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllAuctionsWithObjectsResponse" message="tns:IAuctionProjectService_GetAllAuctionsWithObjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAuction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveAuction" message="tns:IAuctionProjectService_RemoveAuction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveAuctionResponse" message="tns:IAuctionProjectService_RemoveAuction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAuctionById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveAuctionById" message="tns:IAuctionProjectService_RemoveAuctionById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveAuctionByIdResponse" message="tns:IAuctionProjectService_RemoveAuctionById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/UpdateAuction" message="tns:IAuctionProjectService_UpdateAuction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/UpdateAuctionResponse" message="tns:IAuctionProjectService_UpdateAuction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuctionWithProductId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAuctionWithProductId" message="tns:IAuctionProjectService_GetAuctionWithProductId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAuctionWithProductIdResponse" message="tns:IAuctionProjectService_GetAuctionWithProductId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllAucionsForProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/getAllAucionsForProducts" message="tns:IAuctionProjectService_getAllAucionsForProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/getAllAucionsForProductsResponse" message="tns:IAuctionProjectService_getAllAucionsForProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuctionsWhereSellerId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAuctionsWhereSellerId" message="tns:IAuctionProjectService_GetAuctionsWhereSellerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAuctionsWhereSellerIdResponse" message="tns:IAuctionProjectService_GetAuctionsWhereSellerId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuctionsWhereWinnerId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAuctionsWhereWinnerId" message="tns:IAuctionProjectService_GetAuctionsWhereWinnerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAuctionsWhereWinnerIdResponse" message="tns:IAuctionProjectService_GetAuctionsWhereWinnerId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuctionsWithLessTimeLeft">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAuctionsWithLessTimeLeft" message="tns:IAuctionProjectService_GetAuctionsWithLessTimeLeft_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAuctionsWithLessTimeLeftResponse" message="tns:IAuctionProjectService_GetAuctionsWithLessTimeLeft_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMostRecentAuctions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetMostRecentAuctions" message="tns:IAuctionProjectService_GetMostRecentAuctions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetMostRecentAuctionsResponse" message="tns:IAuctionProjectService_GetMostRecentAuctions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuctionByIdWithObjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAuctionByIdWithObjects" message="tns:IAuctionProjectService_GetAuctionByIdWithObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAuctionByIdWithObjectsResponse" message="tns:IAuctionProjectService_GetAuctionByIdWithObjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategorytById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetCategorytById" message="tns:IAuctionProjectService_GetCategorytById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetCategorytByIdResponse" message="tns:IAuctionProjectService_GetCategorytById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/AddCategory" message="tns:IAuctionProjectService_AddCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/AddCategoryResponse" message="tns:IAuctionProjectService_AddCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllCategories" message="tns:IAuctionProjectService_GetAllCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllCategoriesResponse" message="tns:IAuctionProjectService_GetAllCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveCategory" message="tns:IAuctionProjectService_RemoveCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveCategoryResponse" message="tns:IAuctionProjectService_RemoveCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCategoryById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveCategoryById" message="tns:IAuctionProjectService_RemoveCategoryById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveCategoryByIdResponse" message="tns:IAuctionProjectService_RemoveCategoryById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/UpdateCategory" message="tns:IAuctionProjectService_UpdateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/UpdateCategoryResponse" message="tns:IAuctionProjectService_UpdateCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetCategoryByName" message="tns:IAuctionProjectService_GetCategoryByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetCategoryByNameResponse" message="tns:IAuctionProjectService_GetCategoryByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCategoryByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveCategoryByName" message="tns:IAuctionProjectService_RemoveCategoryByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveCategoryByNameResponse" message="tns:IAuctionProjectService_RemoveCategoryByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryWithObjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetCategoryWithObjects" message="tns:IAuctionProjectService_GetCategoryWithObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetCategoryWithObjectsResponse" message="tns:IAuctionProjectService_GetCategoryWithObjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBidById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetBidById" message="tns:IAuctionProjectService_GetBidById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetBidByIdResponse" message="tns:IAuctionProjectService_GetBidById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/CreateBid" message="tns:IAuctionProjectService_CreateBid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/CreateBidResponse" message="tns:IAuctionProjectService_CreateBid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/AddBid" message="tns:IAuctionProjectService_AddBid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/AddBidResponse" message="tns:IAuctionProjectService_AddBid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBids">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllBids" message="tns:IAuctionProjectService_GetAllBids_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllBidsResponse" message="tns:IAuctionProjectService_GetAllBids_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveBid" message="tns:IAuctionProjectService_RemoveBid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveBidResponse" message="tns:IAuctionProjectService_RemoveBid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBidById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveBidById" message="tns:IAuctionProjectService_RemoveBidById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveBidByIdResponse" message="tns:IAuctionProjectService_RemoveBidById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/UpdateBid" message="tns:IAuctionProjectService_UpdateBid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/UpdateBidResponse" message="tns:IAuctionProjectService_UpdateBid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBidsByAccountId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllBidsByAccountId" message="tns:IAuctionProjectService_GetAllBidsByAccountId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllBidsByAccountIdResponse" message="tns:IAuctionProjectService_GetAllBidsByAccountId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBidsByAuctionId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllBidsByAuctionId" message="tns:IAuctionProjectService_GetAllBidsByAuctionId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllBidsByAuctionIdResponse" message="tns:IAuctionProjectService_GetAllBidsByAuctionId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBidWithObjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetBidWithObjects" message="tns:IAuctionProjectService_GetBidWithObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetBidWithObjectsResponse" message="tns:IAuctionProjectService_GetBidWithObjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetProductById" message="tns:IAuctionProjectService_GetProductById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetProductByIdResponse" message="tns:IAuctionProjectService_GetProductById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProductsInCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllProductsInCategory" message="tns:IAuctionProjectService_GetAllProductsInCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllProductsInCategoryResponse" message="tns:IAuctionProjectService_GetAllProductsInCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/AddProduct" message="tns:IAuctionProjectService_AddProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/AddProductResponse" message="tns:IAuctionProjectService_AddProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllProducts" message="tns:IAuctionProjectService_GetAllProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetAllProductsResponse" message="tns:IAuctionProjectService_GetAllProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveProduct" message="tns:IAuctionProjectService_RemoveProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveProductResponse" message="tns:IAuctionProjectService_RemoveProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProductById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveProductById" message="tns:IAuctionProjectService_RemoveProductById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/RemoveProductByIdResponse" message="tns:IAuctionProjectService_RemoveProductById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/UpdateProduct" message="tns:IAuctionProjectService_UpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/UpdateProductResponse" message="tns:IAuctionProjectService_UpdateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindProductsWithPriceMoreThan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/FindProductsWithPriceMoreThan" message="tns:IAuctionProjectService_FindProductsWithPriceMoreThan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/FindProductsWithPriceMoreThanResponse" message="tns:IAuctionProjectService_FindProductsWithPriceMoreThan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsWithName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetProductsWithName" message="tns:IAuctionProjectService_GetProductsWithName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetProductsWithNameResponse" message="tns:IAuctionProjectService_GetProductsWithName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsWithDescription">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetProductsWithDescription" message="tns:IAuctionProjectService_GetProductsWithDescription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetProductsWithDescriptionResponse" message="tns:IAuctionProjectService_GetProductsWithDescription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindProductsWithPriceLessThan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/FindProductsWithPriceLessThan" message="tns:IAuctionProjectService_FindProductsWithPriceLessThan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/FindProductsWithPriceLessThanResponse" message="tns:IAuctionProjectService_FindProductsWithPriceLessThan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductWithObjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuctionProjectService/GetProductWithObjects" message="tns:IAuctionProjectService_GetProductWithObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuctionProjectService/GetProductWithObjectsResponse" message="tns:IAuctionProjectService_GetProductWithObjects_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IAuctionProjectService" type="tns:IAuctionProjectService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAccountById">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAccountById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HashAndSaltPassword">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/HashAndSaltPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAccount">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/AddAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAccounts">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAllAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAccount">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/RemoveAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAccountById">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/RemoveAccountById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccount">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/UpdateAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountByUsername">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAccountByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountByEmail">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAccountByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountWithObjects">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAccountWithObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuctionById">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAuctionById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAuction">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/AddAuction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuctions">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAllAuctions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuctionsWithObjects">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAllAuctionsWithObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAuction">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/RemoveAuction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAuctionById">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/RemoveAuctionById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuction">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/UpdateAuction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuctionWithProductId">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAuctionWithProductId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllAucionsForProducts">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/getAllAucionsForProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuctionsWhereSellerId">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAuctionsWhereSellerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuctionsWhereWinnerId">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAuctionsWhereWinnerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuctionsWithLessTimeLeft">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAuctionsWithLessTimeLeft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMostRecentAuctions">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetMostRecentAuctions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuctionByIdWithObjects">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAuctionByIdWithObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategorytById">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetCategorytById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCategory">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/AddCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAllCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCategory">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/RemoveCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCategoryById">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/RemoveCategoryById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/UpdateCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryByName">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetCategoryByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCategoryByName">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/RemoveCategoryByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryWithObjects">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetCategoryWithObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBidById">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetBidById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBid">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/CreateBid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBid">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/AddBid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBids">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAllBids" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBid">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/RemoveBid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveBidById">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/RemoveBidById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBid">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/UpdateBid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBidsByAccountId">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAllBidsByAccountId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBidsByAuctionId">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAllBidsByAuctionId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBidWithObjects">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetBidWithObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductById">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetProductById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProductsInCategory">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAllProductsInCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetAllProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProduct">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/RemoveProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProductById">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/RemoveProductById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindProductsWithPriceMoreThan">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/FindProductsWithPriceMoreThan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsWithName">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetProductsWithName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsWithDescription">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetProductsWithDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindProductsWithPriceLessThan">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/FindProductsWithPriceLessThan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductWithObjects">
+      <soap:operation soapAction="http://tempuri.org/IAuctionProjectService/GetProductWithObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AuctionProjectService">
+    <wsdl:port name="IAuctionProjectService" binding="tns:IAuctionProjectService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/WcfServiceLibraryAuction/AuctionProjectService/BidService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

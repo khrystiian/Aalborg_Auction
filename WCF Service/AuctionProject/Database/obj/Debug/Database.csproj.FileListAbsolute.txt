@@ -1,0 +1,14 @@
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\Database\bin\Debug\Database.dll.config
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\Database\bin\Debug\Database.dll
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\Database\bin\Debug\Database.pdb
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\Database\bin\Debug\AuctionProject.dll
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\Database\bin\Debug\EntityFramework.dll
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\Database\bin\Debug\EntityFramework.SqlServer.dll
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\Database\bin\Debug\AuctionProject.pdb
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\Database\bin\Debug\EntityFramework.xml
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\Database\bin\Debug\EntityFramework.SqlServer.xml
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\Database\obj\Debug\Database.csprojResolveAssemblyReference.cache
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\Database\obj\Debug\Database.Migrations.Enitial.resources
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\Database\obj\Debug\Database.csproj.GenerateResource.Cache
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\Database\obj\Debug\Database.dll
+E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\Database\obj\Debug\Database.pdb

@@ -1,0 +1,19 @@
+System.ArgumentNullException: Value cannot be null.
+Parameter name: entity
+   at System.Data.Entity.Utilities.Check.NotNull[T](T value, String parameterName)
+   at System.Data.Entity.DbContext.Entry[TEntity](TEntity entity)
+   at Database.ARepository`1.Update(T entity) in E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\Database\ARepository.cs:line 74
+   at BussinessLayer.AController`1.Update(T entity) in E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\BussinessLayer\AController.cs:line 63
+   at WcfServiceLibraryAuction.AuctionProjectService.UpdateCategory(Category Category) in E:\ProjectSem3\MyFirstProject\SemesterProject\AuctionProject\WcfServiceLibraryAuction\AuctionProjectService.cs:line 327
+   at SyncInvokeUpdateCategory(Object , Object[] , Object[] )
+   at System.ServiceModel.Dispatcher.SyncMethodInvoker.Invoke(Object instance, Object[] inputs, Object[]& outputs)
+   at System.ServiceModel.Dispatcher.DispatchOperationRuntime.InvokeBegin(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage5(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage41(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage4(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage31(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage3(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage2(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage11(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage1(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.MessageRpc.Process(Boolean isOperationContextSet)
